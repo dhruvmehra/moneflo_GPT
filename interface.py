@@ -15,7 +15,7 @@ def decode_response(response: str) -> dict:
         dict: dictionary with response data
     """
 
-    print("res ---->", response)
+    # print("res ---->", response)
     answer = json.loads(response)
 
     return answer
