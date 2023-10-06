@@ -63,30 +63,8 @@ def query_agent(agent, query):
 
     prompt = (
         """
-            For the following query, 
-            *Default* If it is just asking a question that requires neither, reply as follows:
-            {"answer": "answer"}
-            
-            If it requires drawing a table, reply as follows:
-            {"table": {"columns": ["column1", "column2", ...], "data": [[value1, value2, ...], [value1, value2, ...], ...]}}
-
-            If you do not know the answer, reply as follows:
-            {"answer": "I do not know."}
-            
-            Example:
-            {"answer": "The title with the highest rating is 'Gilead'"}
-            
-            Return all output as a string.
-
-            All strings in "columns" list and data list, should be in double quotes,
-            
-            For example: {"columns": ["title", "ratings_count"], "data": [["Gilead", 361], ["Spider's Web", 5164]]}
-            
-            Lets think step by step.
-            
-            Below is the query.
-            Query: 
-            """
+            Query:
+        """
         + query
     )
 
