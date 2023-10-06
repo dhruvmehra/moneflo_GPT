@@ -16,7 +16,7 @@ from langchain.agents import AgentType
 API_KEY = st.secrets["apikey"]
 
 
-def create_agent(filename: str):
+def create_agent(filename: str, model_name: str):
     """
     Create an agent that can access and use a large language model (LLM).
 
@@ -32,7 +32,7 @@ def create_agent(filename: str):
     llm = ChatOpenAI(
         openai_api_key=API_KEY,
         temperature=0,
-        model_name="gpt-3.5-turbo-16k",
+        model_name=model_name,
     )
 
     # Read the CSV file into a Pandas DataFrame.

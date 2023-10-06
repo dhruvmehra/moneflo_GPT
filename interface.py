@@ -42,12 +42,12 @@ st.title("MoneyFlo GPT")
 # st.write("Please upload your CSV file below.")
 
 data = st.file_uploader("Upload a CSV")
-
+model_name = st.selectbox("Select Model Name", ["gpt-4", "gpt-3.5-turbo-16k"])
 query = st.text_area("Insert your query")
 
 if st.button("Submit Query", type="primary"):
     # Create an agent from the CSV file.
-    agent = create_agent(data)
+    agent = create_agent(data, model_name)
 
     # Query the agent.
     response = query_agent(agent=agent, query=query)
